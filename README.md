@@ -1,2 +1,4 @@
-# etch-a-sketch
-Etch-A-Sketch project for the Foundations Course of TOP.
+# Etch-a-Sketch
+Etch-a-Sketch project for the Foundations Course of TOP.
+
+Project in course: https://www.theodinproject.com/lessons/foundations-etch-a-sketch
