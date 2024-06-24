@@ -2,4 +2,51 @@
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
+    --night: hsla(123, 91%, 4%, 1);
+    --timberwolf: hsla(0, 1%, 81%, 1);
+    --indigo-dye: hsla(209, 86%, 25%, 1);
+    --viridian: hsla(146, 31%, 37%, 1);
+    --vermilion: hsla(2, 91%, 61%, 1);
+}
+
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--timberwolf);
+    gap: 16px;
+    padding: 16px;
+}
+
+.title {
+    font-size: 36px;
+    color: var(--night);
+}
+
+.sub-title {
+    color: var(--night);
+    font-weight: 300;
+    text-align: center;
+}
+
+.clear-btn {
+    font-size: 18px;
+    padding: 8px 16px;
+    font-weight: 550;
+    border: 2px solid var(--indigo-dye);
+    border-radius: 10px;
+    background-color: var(--timberwolf);
+}
+
+.grid-container {
+    border: 2px solid var(--indigo-dye);
+    background-color: var(--timberwolf);
 }
