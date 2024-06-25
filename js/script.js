@@ -38,11 +38,11 @@ let hoverOverGrid = function () {
     ];
     if (e.target.classList.contains("square")) {
       interactions++;
-      //   let opacity = `${interactions * 0.1}`;
-      //   console.log(opacity);
       let randomColor = colorArr[Math.floor(Math.random() * colorArr.length)];
       e.target.style.background = randomColor;
-      e.target.style.opacity = opacity;
+      //   let opacity = `${interactions * 0.1}`;
+      //   console.log(opacity);
+      //   e.target.style.opacity = opacity;
     }
   };
 };
