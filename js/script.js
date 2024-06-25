@@ -13,15 +13,14 @@ function generateGrid(numOfSquares = 16) {
       newSquare.classList.toggle("square");
       newSquare.style.width = `${dimPercent}%`;
       newSquare.style.height = `${squareDim}px`;
-      newSquare.addEventListener("mouseover", hover);
+      newSquare.addEventListener("mouseover", hoverOverSquare);
       newRow.appendChild(newSquare);
     }
     container.appendChild(newRow);
   }
 }
 
-function hover(e) {
-  // Use mouseenter and mouseleave for the whole container
+function hoverOverSquare(e) {
   // use mouseover / mouseout for the squares
   let colorArr = [
     "var(--vermilion)",
@@ -39,4 +38,26 @@ function hover(e) {
   e.target.style.background = randomColor;
 }
 
+function clearBtnHandler(e) {
+  let desiredSquares = 16;
+  do {
+    desiredSquares = +prompt(
+      "How many squares per side do you want for the sketch pad? (Max = 100)",
+      "16"
+    );
+  } while (desiredSquares > 101);
+
+  //  clear grid container
+  let container = document.querySelector(".grid-container");
+  container.innerHTML = "";
+
+  generateGrid(desiredSquares);
+}
+
 generateGrid(16);
+
+let clearBtn = document.querySelector(".clear-btn");
+clearBtn.addEventListener("click", clearBtnHandler);
+
+// TODO: make a single handler for all events on the page
+// TODO: implement a progressive darkening effect where each interaction darkens the square by 10%
