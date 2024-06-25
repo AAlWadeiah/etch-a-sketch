@@ -13,15 +13,15 @@ function generateGrid(numOfSquares = 16) {
       newSquare.classList.toggle("square");
       newSquare.style.width = `${dimPercent}%`;
       newSquare.style.height = `${squareDim}px`;
-      newSquare.addEventListener("mouseover", hoverOverSquare);
+      //   newSquare.addEventListener("mouseover", hoverOverSquare);
       newRow.appendChild(newSquare);
     }
     container.appendChild(newRow);
   }
 }
 
-function hoverOverSquare(e) {
-  // use mouseover / mouseout for the squares
+function hoverOverGrid(e) {
+  // use mouseover for the squares
   let colorArr = [
     "var(--vermilion)",
     "var(--rose)",
@@ -56,8 +56,11 @@ function clearBtnHandler(e) {
 
 generateGrid(16);
 
+// One event handler attached to the grid to handle all "hover" events over all squares
+let grid = document.querySelector(".grid-container");
+grid.addEventListener("mouseover", hoverOverGrid);
+
 let clearBtn = document.querySelector(".clear-btn");
 clearBtn.addEventListener("click", clearBtnHandler);
 
-// TODO: make a single handler for all events on the page
 // TODO: implement a progressive darkening effect where each interaction darkens the square by 10%
