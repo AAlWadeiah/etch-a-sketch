@@ -7,6 +7,16 @@
     --indigo-dye: hsla(209, 86%, 25%, 1);
     --viridian: hsla(146, 31%, 37%, 1);
     --vermilion: hsla(2, 91%, 61%, 1);
+    --rose: hsla(330, 100%, 50%, 1);
+    --caput-mortuum: hsla(0, 32%, 25%, 1);
+    --deep-sky-blue: hsla(195, 100%, 49%, 1);
+    --pear: hsla(65, 84%, 56%, 1);
+    --pumpkin: hsla(22, 83%, 58%, 1);
+    --jungle-green: hsla(164, 93%, 34%, 1);
+    --gamboge: hsla(40, 94%, 49%, 1);
+    --purpureus: hsla(284, 47%, 53%, 1);
+    --pale-azure: hsla(195, 100%, 75%, 1);
+    --lime: hsla(73, 93%, 48%, 1);
 }
 
 body {
@@ -65,7 +75,7 @@ body {
 .square {
     /* display: flex;
     flex-direction: column; */
-    border: 1px solid black; 
+    border: 1px dotted black; 
     background-color: white; 
     flex: 0 0 100%;
     /* flex-basis: 100%;

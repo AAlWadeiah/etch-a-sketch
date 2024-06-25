@@ -13,13 +13,30 @@ function generateGrid(numOfSquares = 16) {
       newSquare.classList.toggle("square");
       newSquare.style.width = `${dimPercent}%`;
       newSquare.style.height = `${squareDim}px`;
-      // can set height and width with a single string as well
-      //   let squareStyle = `width: ${dimPercent}%; height: ${squareDim}px;`;
-      //   newSquare.setAttribute("style", squareStyle);
+      newSquare.addEventListener("mouseover", hover);
       newRow.appendChild(newSquare);
     }
     container.appendChild(newRow);
   }
+}
+
+function hover(e) {
+  // Use mouseenter and mouseleave for the whole container
+  // use mouseover / mouseout for the squares
+  let colorArr = [
+    "var(--vermilion)",
+    "var(--rose)",
+    "var(--deep-sky-blue)",
+    "var(--pear)",
+    "var(--pumpkin)",
+    "var(--jungle-green)",
+    "var(--gamboge)",
+    "var(--purpureus)",
+    "var(--pale-azure)",
+    "var(--lime)",
+  ];
+  let randomColor = colorArr[Math.floor(Math.random() * colorArr.length)];
+  e.target.style.background = randomColor;
 }
 
 generateGrid(16);
