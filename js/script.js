@@ -20,23 +20,32 @@ function generateGrid(numOfSquares = 16) {
   }
 }
 
-function hoverOverGrid(e) {
-  // use mouseover for the squares
-  let colorArr = [
-    "var(--vermilion)",
-    "var(--rose)",
-    "var(--deep-sky-blue)",
-    "var(--pear)",
-    "var(--pumpkin)",
-    "var(--jungle-green)",
-    "var(--gamboge)",
-    "var(--purpureus)",
-    "var(--pale-azure)",
-    "var(--lime)",
-  ];
-  let randomColor = colorArr[Math.floor(Math.random() * colorArr.length)];
-  e.target.style.background = randomColor;
-}
+let hoverOverGrid = function () {
+  let interactions = 0;
+  return function (e) {
+    // use mouseover for the squares
+    let colorArr = [
+      "var(--vermilion)",
+      "var(--rose)",
+      "var(--deep-sky-blue)",
+      "var(--pear)",
+      "var(--pumpkin)",
+      "var(--jungle-green)",
+      "var(--gamboge)",
+      "var(--purpureus)",
+      "var(--pale-azure)",
+      "var(--lime)",
+    ];
+    if (e.target.classList.contains("square")) {
+      interactions++;
+      //   let opacity = `${interactions * 0.1}`;
+      //   console.log(opacity);
+      let randomColor = colorArr[Math.floor(Math.random() * colorArr.length)];
+      e.target.style.background = randomColor;
+      e.target.style.opacity = opacity;
+    }
+  };
+};
 
 function clearBtnHandler(e) {
   let desiredSquares = 16;
@@ -58,7 +67,7 @@ generateGrid(16);
 
 // One event handler attached to the grid to handle all "hover" events over all squares
 let grid = document.querySelector(".grid-container");
-grid.addEventListener("mouseover", hoverOverGrid);
+grid.addEventListener("mouseover", hoverOverGrid());
 
 let clearBtn = document.querySelector(".clear-btn");
 clearBtn.addEventListener("click", clearBtnHandler);
